@@ -1,5 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+// import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("org.springframework.boot") version "2.7.12"
@@ -21,7 +21,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    // implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
@@ -37,8 +37,8 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
     reporters {
         reporter(ReporterType.CHECKSTYLE)
     }
-}
+ }
